@@ -4,32 +4,116 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: wheat;
         margin: 0;
         padding: 0;
-        width: 100vw;
-        height: 100vh;
+        height: 600px;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: #060e2a;
+        text-align: center;
+        position: relative;
       }
       input#number {
-        height: 100px;
         border-radius: 0.3rem;
         display: b;
+        background: transparent;
+        width: 200px;
+        height: 2rem;
+        border: 2px solid white;
+        outline: none;
+        color: white;
+        text-align: center;
+        font-weight: 700;
+        font-size: 2rem;
+      }
+      input[type="submit"],
+      button {
+        font-family: poppins;
+        width: 120px;
+        background: #00018a;
+        height: 2.5rem;
+        font-size: larger;
+        border-radius: 0.3rem;
+        margin-top: 1rem;
+        color: white;
+        border: 1.5px solid #00018a;
+      }
+      .btn {
+        position: relative;
+        margin-top: 4rem;
+      }
+      button {
+        background: #fff;
+        color: #00018a;
+        width: 150px;
+        left: 50%;
+        margin-top: 0rem;
+        letter-spacing: 1;
+      }
+      div h3{
+        color: wheat;
+        font-weight: 400;
+        margin: 0;
+      }
+      input::placeholder {
+        color: white;
+      }
+
+      div#box-Text {
+        height: 150px;
+        width: 200px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        background-color: darkblue;
+      }
+      P {
+        font-size: 8rem;
+      }
+      .highlight {
+        color: red;
+      }
+      .start-random-numbers {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
     </style>
   </head>
   <body>
-    <div>
-      <form onsubmit="return false">
-        <label for="">
-          <input type="number" id="number" />
-        </label>
-        <button type="submit" onclick="myFunction()">Submit</button>
+    
+    <div class="start-random-numbers">
+      <h1>Guess the number in the box</h1>
+      <div class="box-number" id="box-Text">
+        <p>&#63;</p>
+      </div>
+      <h3 id="error-message"></h3>
+      <form onsubmit="validateOnSubmit(event)">
+        <input type="number" id="number" oninput="validateInput(event)" />
+        <br />
+        <input type="submit" value="Submit" />
       </form>
+      <div class="btn">
+        <h3 class="trial-times">
+          Attempts Remaining
+        </h3>
+        <button id="button">3</button>
+        <!-- <button onclick="reTry()">Try Again</button> -->
+      </div>
     </div>
     <script src="./index.js"></script>
   </body>

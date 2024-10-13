@@ -30,7 +30,7 @@ function validateOnSubmit(event) {
   let check = number.value
   if (number.value >= output) {
     errorMessage.innerText =
-    `${check} is Less Than The Number in The Box`;
+    `${check} is Greater Than The Number in The Box`;
     errorMessage.classList.add("highlight");
   } else if (number.value <= output) {
     errorMessage.innerText = `${check} is Less Than The Number in The Box`;
